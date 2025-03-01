@@ -1,20 +1,14 @@
 package metier;
 
-
-import annotation.Inject;
 import annotation.SimplyAutoWired;
 import annotation.SimplyComponent;
 import dao.IDao;
 
 @SimplyComponent
-public class MetierImp implements IMetier{
-    @Inject
-    private IDao dao;
+public class MetierImp implements IMetier {
+    private final IDao dao;
 
-    public MetierImp() {
-        this.dao = dao;
-    }
-    @SimplyAutoWired
+    @SimplyAutoWired // Constructor injection
     public MetierImp(IDao dao) {
         this.dao = dao;
     }
@@ -22,11 +16,10 @@ public class MetierImp implements IMetier{
     @Override
     public double calcule() {
         double t = dao.getData();
-        double res = t*23;
-        return res;
+        return t * 23;
     }
-    @Inject
-    public void setDao(IDao dao) {
-        this.dao = dao;
-    }
+    //@Inject
+
 }
+
+
