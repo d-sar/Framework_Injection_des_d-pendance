@@ -1,4 +1,4 @@
 <beans>
-    <bean id = "metier" class="metier.MetierImp"/>
-    <bean id ="dao" class="dao.DaoImp"/>
+    <bean id="metier" class="metier.MetierImp"/>
+    <bean id="dao" class="dao.DaoImp"/>
 </beans>
